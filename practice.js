@@ -10,15 +10,18 @@ button.addEventListener('click', () => {
 })
 
 const products = [
-  {name: 'foo'},
-  {name: 'bar'},
-  {name: 'bazz'},
-  {name: 'quq'}
+  {name: 'foo', price: 30},
+  {name: 'bar', price: 40},
+  {name: 'bazz', price: 5},
+  {name: 'quq', price: 10}
 ];
 
 function render (){
   const html = products.map((product) => {
-    return `<li>${product.name}</li>`
+    return `<li>
+    <h2>${product.name}</h2>
+    $${product.price}
+    </li>`
   }).join('');
   ul.innerHTML = html;
 }
